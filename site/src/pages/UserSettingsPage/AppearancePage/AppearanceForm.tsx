@@ -86,12 +86,6 @@ export const AppearanceForm: FC<AppearanceFormProps> = ({
 						theme={themes.dark}
 						onSelect={() => onChangeTheme("dark")}
 					/>
-					<ThemePreviewButton
-						displayName="Light"
-						active={currentTheme === "light"}
-						theme={themes.light}
-						onSelect={() => onChangeTheme("light")}
-					/>
 				</Stack>
 			</Section>
 			<div css={{ marginBottom: 48 }}></div>

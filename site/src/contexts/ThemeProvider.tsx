@@ -34,7 +34,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 	);
 	const [preferredColorScheme, setPreferredColorScheme] = useState<
 		"dark" | "light"
-	>(themeQuery?.matches ? "light" : "dark");
+	>("dark");
 
 	useEffect(() => {
 		if (!themeQuery) {
@@ -42,7 +42,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 		}
 
 		const listener = (event: MediaQueryListEvent) => {
-			setPreferredColorScheme(event.matches ? "light" : "dark");
+			setPreferredColorScheme("dark");
 		};
 
 		// `addEventListener` here is a recent API that only _very_ up-to-date
@@ -75,7 +75,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
 	const theme =
 		themes[themePreference as keyof typeof themes] ??
-		themes[preferredColorScheme];
+		themes.dark;
 
 	return (
 		<StyledEngineProvider injectFirst>
