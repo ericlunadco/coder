@@ -288,4 +288,43 @@ export default {
 		900: "#881337",
 		950: "#4c0519",
 	},
+	workforce: {
+		// Primary yellow colors
+		yellow: {
+			main: "#FFD600",
+			light: "#FFEA42",
+			dark: "#E6C100",
+			background: "#2A2300",
+			text: "#FFFAE5",
+		},
+		// Background grays
+		background: {
+			primary: "#141C22",
+			secondary: "#26323F",
+			tertiary: "#3D4551",
+		},
+		// Status colors
+		error: "#FF6A52",
+		success: "#F2E540",
+		processing: "#298A2D",
+		queued: "#8886CC",
+		retrying: "#F89105",
+		cancelled: "#D0D709",
+		paused: "#FFC3F",
+		stopped: "#A4A4A4",
+		// Darker status backgrounds
+		errorBg: "#2A1517",
+		successBg: "#1F2A0A",
+		processingBg: "#0A1A2A",
+		queuedBg: "#26323F",
+		retryingBg: "#2A1A05",
+		stoppedBg: "#1A1A1A",
+		// Text colors for status
+		errorText: "#FFE8E5",
+		successText: "#F9FCE5",
+		processingText: "#E5F9E5",
+		queuedText: "#E8E8FF",
+		retryingText: "#FFF3E5",
+		stoppedText: "#E8E8E8",
+	},
 };
