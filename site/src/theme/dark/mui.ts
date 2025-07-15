@@ -8,10 +8,10 @@ const muiTheme = createTheme({
 	palette: {
 		mode: "dark",
 		primary: {
-			main: tw.sky[500],
-			contrastText: tw.white,
-			light: tw.sky[400],
-			dark: tw.sky[600],
+			main: tw.workforce.yellow.main,
+			contrastText: tw.black,
+			light: tw.workforce.yellow.light,
+			dark: tw.workforce.yellow.dark,
 		},
 		secondary: {
 			main: tw.zinc[500],
@@ -19,8 +19,8 @@ const muiTheme = createTheme({
 			dark: tw.zinc[400],
 		},
 		background: {
-			default: tw.zinc[950],
-			paper: tw.zinc[900],
+			default: tw.workforce.background.primary,
+			paper: tw.workforce.background.secondary,
 		},
 		text: {
 			primary: tw.zinc[50],
@@ -29,24 +29,24 @@ const muiTheme = createTheme({
 		},
 		divider: tw.zinc[700],
 		warning: {
-			light: tw.amber[500],
-			main: tw.amber[800],
-			dark: tw.amber[950],
+			light: tw.workforce.yellow.light,
+			main: tw.workforce.yellow.main,
+			dark: tw.workforce.yellow.dark,
 		},
 		success: {
-			main: tw.green[500],
-			dark: tw.green[600],
+			main: tw.workforce.success,
+			dark: tw.workforce.yellow.dark,
 		},
 		info: {
-			light: tw.blue[400],
-			main: tw.blue[600],
-			dark: tw.blue[950],
+			light: tw.workforce.queued,
+			main: tw.workforce.processing,
+			dark: tw.workforce.processingBg,
 			contrastText: tw.zinc[200],
 		},
 		error: {
-			light: tw.red[400],
-			main: tw.red[500],
-			dark: tw.red[950],
+			light: tw.workforce.error,
+			main: tw.workforce.error,
+			dark: tw.workforce.errorBg,
 			contrastText: tw.zinc[200],
 		},
 		action: {
