@@ -36,8 +36,8 @@ const TokensPage: FC = () => {
 				css={styles.section}
 				description={
 					<>
-						Tokens are used to authenticate with the Coder API. You can create a
-						token with the Coder CLI using the <code>{cliCreateCommand}</code>{" "}
+						Tokens are used to authenticate with the Workbench API. You can create a
+						token with the Workbench CLI using the <code>{cliCreateCommand}</code>{" "}
 						command.
 					</>
 				}

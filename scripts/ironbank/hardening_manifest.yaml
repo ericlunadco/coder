@@ -23,7 +23,7 @@ labels:
   # License(s) under which contained software is distributed
   org.opencontainers.image.licenses: "AGPL"
   # URL to find more information on the image
-  org.opencontainers.image.url: "https://coder.com/docs"
+  org.opencontainers.image.url: "https://docs.coder.buildworkforce.ai"
   # Name of the distributing entity, organization or individual
   org.opencontainers.image.vendor: "Coder Technologies"
   org.opencontainers.image.version: "0.15.3"

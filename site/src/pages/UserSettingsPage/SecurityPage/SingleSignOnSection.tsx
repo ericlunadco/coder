@@ -110,7 +110,7 @@ const SSOEmptyState: FC = () => {
 				borderRadius: 8,
 			})}
 			message="No SSO Providers"
-			description="No SSO providers are configured with this Coder deployment."
+			description="No SSO providers are configured with this Workbench deployment."
 			cta={
 				<Link
 					href={docs("/admin/users/oidc-auth")}

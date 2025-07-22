@@ -65,7 +65,7 @@ export const useAppLink = (
 					);
 				} else if (isCoderApp) {
 					displayError(
-						`To use ${label} you need to have Coder Desktop installed`,
+						`To use ${label} you need to have Workbench Desktop installed`,
 					);
 				} else {
 					displayError(`${label} must be installed first.`);

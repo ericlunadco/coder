@@ -31,7 +31,7 @@ export const TwoWarnings: Story = {
 export const OneError: Story = {
 	args: {
 		errors: [
-			"You have multiple replicas but high availability is an Enterprise feature. You will be unable to connect to workspaces.",
+			"You have multiple replicas but high availability is not available. You will be unable to connect to workspaces.",
 		],
 		warnings: [],
 	},

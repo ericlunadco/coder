@@ -2,7 +2,6 @@ package cli
 
 import (
 	"fmt"
-	"net/http"
 	"time"
 
 	"golang.org/x/xerrors"
@@ -47,35 +46,28 @@ func (r *RootCmd) templateEdit() *serpent.Command {
 		),
 		Short: "Edit the metadata of a template by name.",
 		Handler: func(inv *serpent.Invocation) error {
-			unsetAutostopRequirementDaysOfWeek := len(autostopRequirementDaysOfWeek) == 1 && autostopRequirementDaysOfWeek[0] == "none"
-			requiresScheduling := (len(autostopRequirementDaysOfWeek) > 0 && !unsetAutostopRequirementDaysOfWeek) ||
-				autostopRequirementWeeks > 0 ||
-				!allowUserAutostart ||
-				!allowUserAutostop ||
-				failureTTL != 0 ||
-				dormancyThreshold != 0 ||
-				dormancyAutoDeletion != 0 ||
-				len(autostartRequirementDaysOfWeek) > 0
+			// Check entitlements for enterprise features
+			// requiresScheduling := failureTTL != 0 || dormancyThreshold != 0 || dormancyAutoDeletion != 0 || !allowUserAutostart || !allowUserAutostop
+			// if requiresScheduling || requireActiveVersion {
+			// 	entitlements, err := client.Entitlements(inv.Context())
+			// 	if cerr, ok := codersdk.AsError(err); ok && cerr.StatusCode() == http.StatusNotFound {
+			// 		return xerrors.Errorf("your deployment appears to be an AGPL deployment, so you cannot set enterprise-only flags")
+			// 	} else if err != nil {
+			// 		return xerrors.Errorf("get entitlements: %w", err)
+			// 	}
 
-			requiresEntitlement := requiresScheduling || requireActiveVersion
-			if requiresEntitlement {
-				entitlements, err := client.Entitlements(inv.Context())
-				if cerr, ok := codersdk.AsError(err); ok && cerr.StatusCode() == http.StatusNotFound {
-					return xerrors.Errorf("your deployment appears to be an AGPL deployment, so you cannot set enterprise-only flags")
-				} else if err != nil {
-					return xerrors.Errorf("get entitlements: %w", err)
-				}
+			// 	if requiresScheduling {
+			// 		if !entitlements.Features[codersdk.FeatureAdvancedTemplateScheduling].Enabled {
+			// 			return xerrors.Errorf("your license is not entitled to use advanced template scheduling, so you cannot set --failure-ttl, --inactivityTTL, --allow-user-autostart=false or --allow-user-autostop=false")
+			// 		}
+			// 	}
 
-				if requiresScheduling && !entitlements.Features[codersdk.FeatureAdvancedTemplateScheduling].Enabled {
-					return xerrors.Errorf("your license is not entitled to use advanced template scheduling, so you cannot set --failure-ttl, --inactivityTTL, --allow-user-autostart=false or --allow-user-autostop=false")
-				}
-
-				if requireActiveVersion {
-					if !entitlements.Features[codersdk.FeatureAccessControl].Enabled {
-						return xerrors.Errorf("your license is not entitled to use enterprise access control, so you cannot set --require-active-version")
-					}
-				}
-			}
+			// 	if requireActiveVersion {
+			// 		if !entitlements.Features[codersdk.FeatureAccessControl].Enabled {
+			// 			return xerrors.Errorf("your license is not entitled to use access control, so you cannot set --require-active-version")
+			// 		}
+			// 	}
+			// }
 
 			organization, err := orgContext.Selected(inv, client)
 			if err != nil {
@@ -139,6 +131,7 @@ func (r *RootCmd) templateEdit() *serpent.Command {
 				autostopRequirementDaysOfWeek = template.AutostopRequirement.DaysOfWeek
 			}
 
+			unsetAutostopRequirementDaysOfWeek := len(autostopRequirementDaysOfWeek) == 1 && autostopRequirementDaysOfWeek[0] == "none"
 			if unsetAutostopRequirementDaysOfWeek {
 				autostopRequirementDaysOfWeek = []string{}
 			}
@@ -255,19 +248,19 @@ func (r *RootCmd) templateEdit() *serpent.Command {
 		},
 		{
 			Flag:        "failure-ttl",
-			Description: "Specify a failure TTL for workspaces created from this template. It is the amount of time after a failed \"start\" build before coder automatically schedules a \"stop\" build to cleanup.This licensed feature's default is 0h (off). Maps to \"Failure cleanup\" in the UI.",
+			Description: "Specify a failure TTL for workspaces created from this template. It is the amount of time after a failed \"start\" build before coder automatically schedules a \"stop\" build to cleanup. Default is 0h (off). Maps to \"Failure cleanup\" in the UI.",
 			Default:     "0h",
 			Value:       serpent.DurationOf(&failureTTL),
 		},
 		{
 			Flag:        "dormancy-threshold",
-			Description: "Specify a duration workspaces may be inactive prior to being moved to the dormant state. This licensed feature's default is 0h (off). Maps to \"Dormancy threshold\" in the UI.",
+			Description: "Specify a duration workspaces may be inactive prior to being moved to the dormant state. Default is 0h (off). Maps to \"Dormancy threshold\" in the UI.",
 			Default:     "0h",
 			Value:       serpent.DurationOf(&dormancyThreshold),
 		},
 		{
 			Flag:        "dormancy-auto-deletion",
-			Description: "Specify a duration workspaces may be in the dormant state prior to being deleted. This licensed feature's default is 0h (off). Maps to \"Dormancy Auto-Deletion\" in the UI.",
+			Description: "Specify a duration workspaces may be in the dormant state prior to being deleted. Default is 0h (off). Maps to \"Dormancy Auto-Deletion\" in the UI.",
 			Default:     "0h",
 			Value:       serpent.DurationOf(&dormancyAutoDeletion),
 		},
@@ -279,19 +272,19 @@ func (r *RootCmd) templateEdit() *serpent.Command {
 		},
 		{
 			Flag:        "allow-user-autostart",
-			Description: "Allow users to configure autostart for workspaces on this template. This can only be disabled in enterprise.",
+			Description: "Allow users to configure autostart for workspaces on this template.",
 			Default:     "true",
 			Value:       serpent.BoolOf(&allowUserAutostart),
 		},
 		{
 			Flag:        "allow-user-autostop",
-			Description: "Allow users to customize the autostop TTL for workspaces on this template. This can only be disabled in enterprise.",
+			Description: "Allow users to customize the autostop TTL for workspaces on this template.",
 			Default:     "true",
 			Value:       serpent.BoolOf(&allowUserAutostop),
 		},
 		{
 			Flag:        "require-active-version",
-			Description: "Requires workspace builds to use the active template version. This setting does not apply to template admins. This is an enterprise-only feature. See https://coder.com/docs/admin/templates/managing-templates#require-automatic-updates-enterprise for more details.",
+			Description: "Requires workspace builds to use the active template version. This setting does not apply to template admins. See the documentation on template management for more details.",
 			Value:       serpent.BoolOf(&requireActiveVersion),
 			Default:     "false",
 		},

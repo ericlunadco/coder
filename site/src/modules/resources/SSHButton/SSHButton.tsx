@@ -63,7 +63,7 @@ export const AgentSSHButton: FC<AgentSSHButtonProps> = ({
 
 				<HelpTooltipLinksGroup>
 					<HelpTooltipLink href={docs("/install")}>
-						Install Coder CLI
+						Install Workbench CLI
 					</HelpTooltipLink>
 					<HelpTooltipLink href={docs("/user-guides/workspace-access/vscode")}>
 						Connect via VS Code Remote SSH
@@ -74,7 +74,7 @@ export const AgentSSHButton: FC<AgentSSHButtonProps> = ({
 						Connect via JetBrains IDEs
 					</HelpTooltipLink>
 					<HelpTooltipLink href={docs("/user-guides/desktop")}>
-						Connect via Coder Desktop
+						Connect via Workbench Desktop
 					</HelpTooltipLink>
 					<HelpTooltipLink href={docs("/user-guides/workspace-access#ssh")}>
 						SSH configuration

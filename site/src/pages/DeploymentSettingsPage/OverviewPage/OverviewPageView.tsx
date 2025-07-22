@@ -39,7 +39,7 @@ export const OverviewPageView: FC<OverviewPageViewProps> = ({
 			>
 				<SettingsHeaderTitle>General</SettingsHeaderTitle>
 				<SettingsHeaderDescription>
-					Information about your Coder deployment.
+					Information about your Workbench deployment.
 				</SettingsHeaderDescription>
 			</SettingsHeader>
 
@@ -63,7 +63,7 @@ export const OverviewPageView: FC<OverviewPageViewProps> = ({
 						It is recommended that you remove these experiments from your
 						configuration as they have no effect. See{" "}
 						<Link
-							href="https://coder.com/docs/cli/server#--experiments"
+							href="https://docs.coder.buildworkforce.ai/cli/server#--experiments"
 							target="_blank"
 							rel="noreferrer"
 						>

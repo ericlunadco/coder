@@ -304,7 +304,7 @@ export const TemplateSettingsForm: FC<TemplateSettingsForm> = ({
 				title="Port Sharing"
 				description="Shared ports with the Public sharing level can be accessed by anyone,
           while ports with the Authenticated sharing level can only be accessed
-          by authenticated Coder users. Ports with the Owner sharing level can
+          by authenticated Workbench users. Ports with the Owner sharing level can
           only be accessed by the workspace owner."
 			>
 				<FormFields>

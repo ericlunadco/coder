@@ -94,7 +94,7 @@ export const CreateOrganizationPageView: FC<
 							<PopoverContent css={{ transform: "translateY(-28px)" }}>
 								<PopoverPaywall
 									message="Organizations"
-									description="Create multiple organizations within a single Coder deployment, allowing several platform teams to operate with isolated users, templates, and distinct underlying infrastructure."
+									description="Create multiple organizations within a single Workbench deployment, allowing several platform teams to operate with isolated users, templates, and distinct underlying infrastructure."
 									documentationLink={docs("/admin/users/organizations")}
 								/>
 							</PopoverContent>
@@ -114,7 +114,7 @@ export const CreateOrganizationPageView: FC<
 						<div className="min-w-fit mx-auto">
 							<Paywall
 								message="Organizations"
-								description="Create multiple organizations within a single Coder deployment, allowing several platform teams to operate with isolated users, templates, and distinct underlying infrastructure."
+								description="Create multiple organizations within a single Workbench deployment, allowing several platform teams to operate with isolated users, templates, and distinct underlying infrastructure."
 								documentationLink={docs("/admin/users/organizations")}
 							/>
 						</div>

@@ -56,12 +56,12 @@ export const FailureTTLHelperText = (props: { ttl?: number }) => {
 	}
 
 	if (ttl === 0) {
-		return <span>Coder will not automatically stop failed workspaces.</span>;
+		return <span>Workbench will not automatically stop failed workspaces.</span>;
 	}
 
 	return (
 		<span>
-			Coder will attempt to stop failed workspaces after {humanDuration(ttl)}.
+			Workbench will attempt to stop failed workspaces after {humanDuration(ttl)}.
 		</span>
 	);
 };
@@ -75,12 +75,12 @@ export const DormancyTTLHelperText = (props: { ttl?: number }) => {
 	}
 
 	if (ttl === 0) {
-		return <span>Coder will not mark workspaces as dormant.</span>;
+		return <span>Workbench will not mark workspaces as dormant.</span>;
 	}
 
 	return (
 		<span>
-			Coder will mark workspaces as dormant after {humanDuration(ttl)} without
+			Workbench will mark workspaces as dormant after {humanDuration(ttl)} without
 			user connections.
 		</span>
 	);
@@ -95,12 +95,12 @@ export const DormancyAutoDeletionTTLHelperText = (props: { ttl?: number }) => {
 	}
 
 	if (ttl === 0) {
-		return <span>Coder will not automatically delete dormant workspaces.</span>;
+		return <span>Workbench will not automatically delete dormant workspaces.</span>;
 	}
 
 	return (
 		<span>
-			Coder will automatically delete dormant workspaces after{" "}
+			Workbench will automatically delete dormant workspaces after{" "}
 			{humanDuration(ttl)}.
 		</span>
 	);

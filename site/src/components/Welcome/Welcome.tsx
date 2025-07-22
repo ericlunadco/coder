@@ -4,7 +4,7 @@ import { CoderIcon } from "../Icons/CoderIcon";
 const Language = {
 	defaultMessage: (
 		<>
-			Welcome to <strong>Coder</strong>
+			Welcome to <strong>Workbench</strong>
 		</>
 	),
 };
