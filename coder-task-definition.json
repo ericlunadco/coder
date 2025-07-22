@@ -1,0 +1,48 @@
+{
+  "family": "coder",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "executionRoleArn": "arn:aws:iam::132880019009:role/coder-ecs-task-execution-role",
+  "containerDefinitions": [
+    {
+      "name": "coder",
+      "image": "132880019009.dkr.ecr.us-east-1.amazonaws.com/coder:2.0.0-devel-7e49c3bd4",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "CODER_HTTP_ADDRESS",
+          "value": "0.0.0.0:3000"
+        },
+        {
+          "name": "CODER_ACCESS_URL",
+          "value": "https://coder.buildworkforce.ai"
+        },
+        {
+          "name": "CODER_WILDCARD_ACCESS_URL",
+          "value": "*.coder.buildworkforce.ai"
+        }
+      ],
+      "secrets": [
+        {
+          "name": "CODER_PG_CONNECTION_URL",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:132880019009:secret:coder-postgres-url-PO7CI7"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/coder",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
