@@ -36,7 +36,7 @@ export const Language = {
 	passwordRequired: "Please enter a password.",
 	create: "Continue with email",
 	githubCreate: "Continue with GitHub",
-	welcomeMessage: <>Welcome to Coder</>,
+	welcomeMessage: <>Welcome to Workbench</>,
 	firstNameLabel: "First name",
 	lastNameLabel: "Last name",
 	companyLabel: "Company",
@@ -158,7 +158,7 @@ export const SetupPageView: FC<SetupPageViewProps> = ({
 						marginTop: 16,
 					}}
 				>
-					Welcome to <strong>Coder</strong>
+					Welcome to <strong>Workbench</strong>
 				</h1>
 				<div
 					css={(theme) => ({

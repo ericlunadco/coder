@@ -45,7 +45,7 @@ See some common [use cases](../../reference/index.md#use-cases) for the REST API
 ## Sections
 
 <children>
-  This page is rendered on https://coder.com/docs/reference/api. Refer to the other documents in the ` + "`api/`" + ` directory.
+  This page is rendered on https://docs.coder.buildworkforce.ai/reference/api. Refer to the other documents in the ` + "`api/`" + ` directory.
 </children>
 `
 )

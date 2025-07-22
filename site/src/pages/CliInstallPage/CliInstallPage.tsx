@@ -10,7 +10,7 @@ const CliInstallPage: FC = () => {
 	return (
 		<>
 			<Helmet>
-				<title>{pageTitle("Install the Coder CLI")}</title>
+				<title>{pageTitle("Install the Workbench CLI")}</title>
 			</Helmet>
 			<CliInstallPageView origin={origin} />
 		</>

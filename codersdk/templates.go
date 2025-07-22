@@ -35,24 +35,20 @@ type Template struct {
 	Icon               string                 `json:"icon"`
 	DefaultTTLMillis   int64                  `json:"default_ttl_ms"`
 	ActivityBumpMillis int64                  `json:"activity_bump_ms"`
-	// AutostopRequirement and AutostartRequirement are enterprise features. Its
-	// value is only used if your license is entitled to use the advanced template
-	// scheduling feature.
+	// AutostopRequirement and AutostartRequirement are available features.
+	// AutostopRequirement  TemplateAutostopRequirement  `json:"autostop_requirement"`
+	// AutostartRequirement TemplateAutostartRequirement `json:"autostart_requirement"`
 	AutostopRequirement  TemplateAutostopRequirement  `json:"autostop_requirement"`
 	AutostartRequirement TemplateAutostartRequirement `json:"autostart_requirement"`
 	CreatedByID          uuid.UUID                    `json:"created_by_id" format:"uuid"`
 	CreatedByName        string                       `json:"created_by_name"`
 
-	// AllowUserAutostart and AllowUserAutostop are enterprise-only. Their
-	// values are only used if your license is entitled to use the advanced
-	// template scheduling feature.
+	// AllowUserAutostart and AllowUserAutostop are available features.
 	AllowUserAutostart           bool `json:"allow_user_autostart"`
 	AllowUserAutostop            bool `json:"allow_user_autostop"`
 	AllowUserCancelWorkspaceJobs bool `json:"allow_user_cancel_workspace_jobs"`
 
-	// FailureTTLMillis, TimeTilDormantMillis, and TimeTilDormantAutoDeleteMillis are enterprise-only. Their
-	// values are used if your license is entitled to use the advanced
-	// template scheduling feature.
+	// FailureTTLMillis, TimeTilDormantMillis, and TimeTilDormantAutoDeleteMillis are available features.
 	FailureTTLMillis               int64 `json:"failure_ttl_ms"`
 	TimeTilDormantMillis           int64 `json:"time_til_dormant_ms"`
 	TimeTilDormantAutoDeleteMillis int64 `json:"time_til_dormant_autodelete_ms"`
@@ -216,9 +212,7 @@ type UpdateTemplateMeta struct {
 	// duration for all workspaces created from this template. Defaults to 1h
 	// but can be set to 0 to disable activity bumping.
 	ActivityBumpMillis int64 `json:"activity_bump_ms,omitempty"`
-	// AutostopRequirement and AutostartRequirement can only be set if your license
-	// includes the advanced template scheduling feature. If you attempt to set this
-	// value while unlicensed, it will be ignored.
+	// AutostopRequirement and AutostartRequirement can be set for advanced template scheduling.
 	AutostopRequirement            *TemplateAutostopRequirement  `json:"autostop_requirement,omitempty"`
 	AutostartRequirement           *TemplateAutostartRequirement `json:"autostart_requirement,omitempty"`
 	AllowUserAutostart             bool                          `json:"allow_user_autostart,omitempty"`

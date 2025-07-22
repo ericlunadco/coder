@@ -89,9 +89,9 @@ export const DeploymentSidebarView: FC<DeploymentSidebarViewProps> = ({
 						</div>
 					</SidebarNavItem>
 				)}
-				{!hasPremiumLicense && (
+				{/* {!hasPremiumLicense && (
 					<SidebarNavItem href="/deployment/premium">Premium</SidebarNavItem>
-				)}
+				)} */}
 			</div>
 		</BaseSidebar>
 	);

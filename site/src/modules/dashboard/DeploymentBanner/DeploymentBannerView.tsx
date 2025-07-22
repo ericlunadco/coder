@@ -129,7 +129,7 @@ export const DeploymentBannerView: FC<DeploymentBannerViewProps> = ({
 					healthErrors.length > 0 ? (
 						<>
 							<HelpTooltipTitle>
-								We have detected problems with your Coder deployment.
+								We have detected problems with your Workbench deployment.
 							</HelpTooltipTitle>
 							<Stack spacing={1}>
 								{healthErrors.map((error) => (
@@ -138,7 +138,7 @@ export const DeploymentBannerView: FC<DeploymentBannerViewProps> = ({
 							</Stack>
 						</>
 					) : (
-						<>Status of your Coder deployment. Only visible for admins!</>
+						<>Status of your Workbench deployment. Only visible for admins!</>
 					)
 				}
 				open={process.env.STORYBOOK === "true" ? true : undefined}

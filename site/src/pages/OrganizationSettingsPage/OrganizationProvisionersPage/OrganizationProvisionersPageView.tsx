@@ -60,7 +60,7 @@ export const OrganizationProvisionersPageView: FC<
 			<SettingsHeader>
 				<SettingsHeaderTitle>Provisioners</SettingsHeaderTitle>
 				<SettingsHeaderDescription>
-					Coder server runs provisioner daemons which execute terraform during
+					Workbench server runs provisioner daemons which execute terraform during
 					workspace and template builds.{" "}
 					<Link href={docs("/admin/provisioners")}>View docs</Link>
 				</SettingsHeaderDescription>
@@ -98,7 +98,7 @@ export const OrganizationProvisionersPageView: FC<
 			{showPaywall ? (
 				<Paywall
 					message="Provisioners"
-					description="Provisioners run your Terraform to create templates and workspaces. You need a Premium license to use this feature for multiple organizations."
+					description="Provisioners run your Terraform to create templates and workspaces."
 					documentationLink={docs("/")}
 				/>
 			) : (

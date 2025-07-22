@@ -1,7 +1,13 @@
 import { getStaticBuildInfo } from "./buildInfo";
 
 function defaultDocsUrl(): string {
-	const docsUrl = "https://coder.com/docs";
+	// Use environment variable CODER_DOCS_URL if set, otherwise fall back to default
+	const envDocsUrl = process.env.CODER_DOCS_URL;
+	if (envDocsUrl) {
+		return envDocsUrl;
+	}
+	
+	const docsUrl = "https://docs.coder.buildworkforce.ai";
 	// If we can get the specific version, we want to include that in default docs URL.
 	let version = getStaticBuildInfo()?.version;
 	if (!version) {

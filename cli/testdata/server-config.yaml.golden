@@ -7,8 +7,8 @@ networking:
   # (default: <unset>, type: string)
   wildcardAccessURL: ""
   # Specifies the custom docs URL.
-  # (default: https://coder.com/docs, type: url)
-  docsURL: https://coder.com/docs
+  # (default: https://docs.coder.com, type: url)
+  docsURL: https://docs.coder.com
   # Specifies whether to redirect requests that do not match the access URL host.
   # (default: <unset>, type: bool)
   redirectToAccessURL: false
@@ -482,8 +482,8 @@ termsOfServiceURL: ""
 # (default: ed25519, type: string)
 sshKeygenAlgorithm: ed25519
 # URL to use for agent troubleshooting when not set in the template.
-# (default: https://coder.com/docs/admin/templates/troubleshooting, type: url)
-agentFallbackTroubleshootingURL: https://coder.com/docs/admin/templates/troubleshooting
+# (default: https://docs.coder.com/admin/templates/troubleshooting, type: url)
+agentFallbackTroubleshootingURL: https://docs.coder.com/admin/templates/troubleshooting
 # Disable workspace apps that are not served from subdomains. Path-based apps can
 # make requests to the Coder API and pose a security risk when the workspace
 # serves malicious JavaScript. This is recommended for security purposes if a

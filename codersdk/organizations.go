@@ -155,10 +155,10 @@ type CreateTemplateRequest struct {
 	// but can be set to 0 to disable activity bumping.
 	ActivityBumpMillis *int64 `json:"activity_bump_ms,omitempty"`
 	// AutostopRequirement allows optionally specifying the autostop requirement
-	// for workspaces created from this template. This is an enterprise feature.
+	// for workspaces created from this template.
 	AutostopRequirement *TemplateAutostopRequirement `json:"autostop_requirement,omitempty"`
 	// AutostartRequirement allows optionally specifying the autostart allowed days
-	// for workspaces created from this template. This is an enterprise feature.
+	// for workspaces created from this template.
 	AutostartRequirement *TemplateAutostartRequirement `json:"autostart_requirement,omitempty"`
 
 	// Allow users to cancel in-progress workspace jobs.
@@ -166,14 +166,12 @@ type CreateTemplateRequest struct {
 	AllowUserCancelWorkspaceJobs *bool `json:"allow_user_cancel_workspace_jobs"`
 
 	// AllowUserAutostart allows users to set a schedule for autostarting their
-	// workspace. By default this is true. This can only be disabled when using
-	// an enterprise license.
+	// workspace. By default this is true.
 	AllowUserAutostart *bool `json:"allow_user_autostart,omitempty"`
 
 	// AllowUserAutostop allows users to set a custom workspace TTL to use in
 	// place of the template's DefaultTTL field. By default this is true. If
-	// false, the DefaultTTL will always be used. This can only be disabled when
-	// using an enterprise license.
+	// false, the DefaultTTL will always be used.
 	AllowUserAutostop *bool `json:"allow_user_autostop,omitempty"`
 
 	// FailureTTLMillis allows optionally specifying the max lifetime before Coder

@@ -853,29 +853,11 @@ func DefaultCacheDir() string {
 }
 
 func DefaultSupportLinks(docsURL string) []LinkConfig {
-	version := buildinfo.Version()
-	buildInfo := fmt.Sprintf("Version: [`%s`](%s)", version, buildinfo.ExternalURL())
-
 	return []LinkConfig{
 		{
 			Name:   "Documentation",
 			Target: docsURL,
 			Icon:   "docs",
-		},
-		{
-			Name:   "Report a bug",
-			Target: "https://github.com/coder/coder/issues/new?labels=needs+triage&body=" + buildInfo,
-			Icon:   "bug",
-		},
-		{
-			Name:   "Join the Coder Discord",
-			Target: "https://coder.com/chat?utm_source=coder&utm_medium=coder&utm_campaign=server-footer",
-			Icon:   "chat",
-		},
-		{
-			Name:   "Star the Repo",
-			Target: "https://github.com/coder/coder",
-			Icon:   "star",
 		},
 	}
 }
@@ -885,11 +867,16 @@ func removeTrailingVersionInfo(v string) string {
 }
 
 func DefaultDocsURL() string {
+	// Use environment variable CODER_DOCS_URL if set
+	if envURL := os.Getenv("CODER_DOCS_URL"); envURL != "" {
+		return envURL
+	}
+	
 	version := removeTrailingVersionInfo(buildinfo.Version())
 	if version == "v0.0.0" {
-		return "https://coder.com/docs"
+		return "https://docs.coder.buildworkforce.ai"
 	}
-	return "https://coder.com/docs/@" + version
+	return "https://docs.coder.buildworkforce.ai/@" + version
 }
 
 // DeploymentConfig contains both the deployment values and how they're set.
@@ -2526,7 +2513,7 @@ func (c *DeploymentValues) Options() serpent.OptionSet {
 			Flag:        "agent-fallback-troubleshooting-url",
 			Env:         "CODER_AGENT_FALLBACK_TROUBLESHOOTING_URL",
 			Hidden:      true,
-			Default:     "https://coder.com/docs/admin/templates/troubleshooting",
+			Default:     "https://docs.coder.buildworkforce.ai/admin/templates/troubleshooting",
 			Value:       &c.AgentFallbackTroubleshootingURL,
 			YAML:        "agentFallbackTroubleshootingURL",
 		},

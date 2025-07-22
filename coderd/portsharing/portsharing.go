@@ -20,7 +20,7 @@ func (AGPLPortSharer) AuthorizedLevel(_ database.Template, _ codersdk.WorkspaceA
 }
 
 func (AGPLPortSharer) ValidateTemplateMaxLevel(_ codersdk.WorkspaceAgentPortShareLevel) error {
-	return xerrors.New("Restricting port sharing level is an enterprise feature that is not enabled.")
+	return xerrors.New("Restricting port sharing level is not available.")
 }
 
 func (AGPLPortSharer) ConvertMaxLevel(_ database.AppSharingLevel) codersdk.WorkspaceAgentPortShareLevel {

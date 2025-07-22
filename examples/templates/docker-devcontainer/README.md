@@ -9,7 +9,7 @@ tags: [container, docker, devcontainer]
 
 # Remote Development on Docker Containers (with Devcontainers)
 
-Provision Devcontainers as [Coder workspaces](https://coder.com/docs/workspaces) in Docker with this example template.
+Provision Devcontainers as [Coder workspaces](https://docs.coder.buildworkforce.ai/workspaces) in Docker with this example template.
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ sudo -u coder docker ps
 
 ## Architecture
 
-Coder supports Devcontainers via [envbuilder](https://github.com/coder/envbuilder), an open source project. Read more about this in [Coder's documentation](https://coder.com/docs/templates/dev-containers).
+Coder supports Devcontainers via [envbuilder](https://github.com/coder/envbuilder), an open source project. Read more about this in [Coder's documentation](https://docs.coder.buildworkforce.ai/templates/dev-containers).
 
 This template provisions the following resources:
 

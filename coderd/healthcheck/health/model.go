@@ -48,7 +48,7 @@ const (
 
 // Default docs URL
 var (
-	docsURLDefault = "https://coder.com/docs"
+	docsURLDefault = "https://docs.coder.buildworkforce.ai"
 )
 
 // @typescript-generate Severity

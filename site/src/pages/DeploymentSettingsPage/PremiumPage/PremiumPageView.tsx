@@ -16,8 +16,8 @@ const EnterpriseVersion: FC = () => {
 				<div>
 					<h1 className="text-3xl m-0 font-semibold">Premium</h1>
 					<p className="text-sm max-w-xl mt-2 text-content-secondary font-medium">
-						As an Enterprise license holder, you already benefit from Coder’s
-						features for secure, large-scale deployments. Upgrade to Coder
+						As an Enterprise license holder, you already benefit from Workbench's
+						features for secure, large-scale deployments. Upgrade to Workbench
 						Premium for enhanced multi-tenant control and flexibility.
 					</p>
 				</div>
@@ -100,8 +100,8 @@ const OSSVersion: FC = () => {
 						Premium
 					</h1>
 					<p className="text-sm max-w-xl mt-2 text-content-secondary">
-						Coder Premium is designed for enterprises that need to scale their
-						Coder deployment efficiently, securely, and with full control. By
+						Workbench Premium is designed for enterprises that need to scale their
+						Workbench deployment efficiently, securely, and with full control. By
 						upgrading, your team gains access to advanced features enabling
 						governance across all environments.
 					</p>

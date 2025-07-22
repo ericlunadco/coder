@@ -1,6 +1,6 @@
 [Unit]
 Description="Coder - Self-hosted developer workspaces on your infra"
-Documentation=https://coder.com/docs
+Documentation=https://docs.coder.buildworkforce.ai
 Requires=network-online.target
 After=network-online.target
 ConditionFileNotEmpty=/etc/coder.d/coder.env

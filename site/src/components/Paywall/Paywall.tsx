@@ -1,6 +1,6 @@
 import type { Interpolation, Theme } from "@emotion/react";
 import Link from "@mui/material/Link";
-import { PremiumBadge } from "components/Badges/Badges";
+// import { PremiumBadge } from "components/Badges/Badges";
 import { Button } from "components/Button/Button";
 import { Stack } from "components/Stack/Stack";
 import { CircleCheckBigIcon } from "lucide-react";
@@ -22,7 +22,7 @@ export const Paywall: FC<PaywallProps> = ({
 			<div>
 				<Stack direction="row" alignItems="center" css={{ marginBottom: 24 }}>
 					<h5 css={styles.title}>{message}</h5>
-					<PremiumBadge />
+					{/* <PremiumBadge /> */}
 				</Stack>
 
 				{description && <p css={styles.description}>{description}</p>}
