@@ -104,7 +104,7 @@ echo "Documentation will be available at: https://$CLOUDFRONT_DOMAIN"
 # CloudFront Distribution ID: E1D97FI1EB5Z9H
 # CloudFront Domain: d3bxhxl4fsp8gb.cloudfront.net
 # Documentation URL: https://d3bxhxl4fsp8gb.cloudfront.net
-# Custom Domain: https://docs.coder.buildworkforce.ai (requires DNS setup)
+# Custom Domain: https://docs.workbench.buildworkforce.ai (requires DNS setup)
 ```
 
 **Important:** Update the `CODER_DOCS_URL` environment variable in your deployment to point to your CloudFront domain.
@@ -343,7 +343,7 @@ CODER_HTTP_ADDRESS=0.0.0.0:3000
 CODER_ACCESS_URL=https://your-domain.com
 CODER_PG_CONNECTION_URL=postgresql://...  # If using external DB
 CODER_WILDCARD_ACCESS_URL=*.your-domain.com
-CODER_DOCS_URL=https://docs.coder.buildworkforce.ai  # Custom domain (requires DNS setup)
+CODER_DOCS_URL=https://docs.workbench.buildworkforce.ai  # Custom domain (requires DNS setup)
 # OR use CloudFront domain directly:
 # CODER_DOCS_URL=https://d3bxhxl4fsp8gb.cloudfront.net
 ```

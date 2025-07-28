@@ -8,7 +8,7 @@
   "containerDefinitions": [
     {
       "name": "coder",
-      "image": "132880019009.dkr.ecr.us-east-1.amazonaws.com/coder:2.0.0-devel-7e49c3bd4",
+      "image": "132880019009.dkr.ecr.us-east-1.amazonaws.com/coder:2.0.0-devel-e9f37700b",
       "portMappings": [
         {
           "containerPort": 3000,
@@ -22,11 +22,11 @@
         },
         {
           "name": "CODER_ACCESS_URL",
-          "value": "https://coder.buildworkforce.ai"
+          "value": "https://workbench.buildworkforce.ai"
         },
         {
           "name": "CODER_WILDCARD_ACCESS_URL",
-          "value": "*.coder.buildworkforce.ai"
+          "value": "*.workbench.buildworkforce.ai"
         }
       ],
       "secrets": [
