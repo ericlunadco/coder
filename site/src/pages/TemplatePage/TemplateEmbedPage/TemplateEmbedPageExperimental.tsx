@@ -284,7 +284,7 @@ function getClipboardCopyContent(
 	const createWorkspaceParams = new URLSearchParams(buttonValues);
 	const buttonUrl = `${createWorkspaceUrl}?${createWorkspaceParams.toString()}`;
 
-	return `[![Open in Coder](${deploymentUrl}/open-in-coder.svg)](${buttonUrl})`;
+	return `[![Open in Workbench](${deploymentUrl}/open-in-coder.svg)](${buttonUrl})`;
 }
 
 interface ButtonPreviewProps {
@@ -306,7 +306,7 @@ const ButtonPreview: FC<ButtonPreviewProps> = ({ template, buttonValues }) => {
 			className="sticky top-10 flex gap-16 h-96 flex-1 flex-col items-center justify-center
 			 rounded-lg border border-border border-solid bg-surface-secondary"
 		>
-			<img src="/open-in-coder.svg" alt="Open in Coder button" />
+			<img src="/open-in-coder.svg" alt="Open in Workbench button" />
 			<Button
 				variant="default"
 				onClick={clipboard.copyToClipboard}

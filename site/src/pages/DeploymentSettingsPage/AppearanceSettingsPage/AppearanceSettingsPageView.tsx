@@ -3,8 +3,8 @@ import TextField from "@mui/material/TextField";
 import type { UpdateAppearanceConfig } from "api/typesGenerated";
 import {
 	Badges,
-	EnterpriseBadge,
-	PremiumBadge,
+	// EnterpriseBadge,
+	// PremiumBadge,
 } from "components/Badges/Badges";
 import { Button } from "components/Button/Button";
 import { PopoverPaywall } from "components/Paywall/PopoverPaywall";
@@ -61,12 +61,12 @@ export const AppearanceSettingsPageView: FC<
 			<SettingsHeader>
 				<SettingsHeaderTitle>Appearance</SettingsHeaderTitle>
 				<SettingsHeaderDescription>
-					Customize the look and feel of your Coder deployment.
+					Customize the look and feel of your Workbench deployment.
 				</SettingsHeaderDescription>
 			</SettingsHeader>
 
 			<Badges>
-				<Popover mode="hover">
+				{/* <Popover mode="hover">
 					{isEntitled && !isPremium ? (
 						<EnterpriseBadge />
 					) : (
@@ -81,16 +81,16 @@ export const AppearanceSettingsPageView: FC<
 						<PopoverPaywall
 							message="Appearance"
 							description="With a Premium license, you can customize the appearance and branding of your deployment."
-							documentationLink="https://coder.com/docs/admin/appearance"
+							documentationLink="https://docs.coder.buildworkforce.ai/admin/appearance"
 						/>
 					</PopoverContent>
-				</Popover>
+				</Popover> */}
 			</Badges>
 
 			<Fieldset
 				title="Application name"
 				subtitle="Specify a custom application name to be displayed on the login page."
-				validation={!isEntitled ? "This is an Enterprise only feature." : ""}
+				validation={!isEntitled ? "" : ""}
 				onSubmit={applicationNameForm.handleSubmit}
 				button={!isEntitled && <Button disabled>Submit</Button>}
 			>
@@ -113,7 +113,7 @@ export const AppearanceSettingsPageView: FC<
 				validation={
 					isEntitled
 						? "We recommend a transparent image with 3:1 aspect ratio."
-						: "This is an Enterprise only feature."
+						: ""
 				}
 				onSubmit={logoForm.handleSubmit}
 				button={!isEntitled && <Button disabled>Submit</Button>}

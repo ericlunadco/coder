@@ -81,7 +81,7 @@ export const getDisplayWorkspaceBuildInitiatedBy = (
 			return build.initiator_name;
 		case "autostart":
 		case "autostop":
-			return "Coder";
+			return "Workbench";
 	}
 };
 

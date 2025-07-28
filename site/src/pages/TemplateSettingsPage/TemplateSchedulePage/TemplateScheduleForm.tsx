@@ -471,7 +471,7 @@ export const TemplateScheduleForm: FC<TemplateScheduleForm> = ({
 			{allowAdvancedScheduling && (
 				<FormSection
 					title="Dormancy"
-					description="When enabled, Coder will mark workspaces as dormant after a period of time with no connections. Dormant workspaces can be auto-deleted (see below) or manually reviewed by the workspace owner or admins."
+					description="When enabled, Workbench will mark workspaces as dormant after a period of time with no connections. Dormant workspaces can be auto-deleted (see below) or manually reviewed by the workspace owner or admins."
 				>
 					<FormFields spacing={FORM_FIELDS_SPACING}>
 						<Stack spacing={DORMANT_FIELDSET_SPACING}>
@@ -518,7 +518,7 @@ export const TemplateScheduleForm: FC<TemplateScheduleForm> = ({
 									<StackLabel>
 										Enable Dormancy Auto-Deletion
 										<StackLabelHelperText>
-											When enabled, Coder will permanently delete dormant
+											When enabled, Workbench will permanently delete dormant
 											workspaces after a period of time.{" "}
 											<strong>
 												Once a workspace is deleted it cannot be recovered.
@@ -561,7 +561,7 @@ export const TemplateScheduleForm: FC<TemplateScheduleForm> = ({
 									<StackLabel>
 										Enable Failure Cleanup
 										<StackLabelHelperText>
-											When enabled, Coder will attempt to stop workspaces that
+											When enabled, Workbench will attempt to stop workspaces that
 											are in a failed state after a period of time.
 										</StackLabelHelperText>
 									</StackLabel>

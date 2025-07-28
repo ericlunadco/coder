@@ -8,7 +8,7 @@
   "containerDefinitions": [
     {
       "name": "coder",
-      "image": "132880019009.dkr.ecr.us-east-1.amazonaws.com/coder:2.0.0-devel-e9f37700b",
+      "image": "132880019009.dkr.ecr.us-east-1.amazonaws.com/coder:2.0.0-devel-a99f2463c",
       "portMappings": [
         {
           "containerPort": 3000,

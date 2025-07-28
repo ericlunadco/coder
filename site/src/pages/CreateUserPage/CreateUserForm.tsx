@@ -43,7 +43,7 @@ export const authMethodLanguage = {
 				<Link
 					target="_blank"
 					rel="noopener"
-					href="https://coder.com/docs/admin/users/headless-auth"
+					href="https://docs.coder.buildworkforce.ai/admin/users/headless-auth"
 				>
 					documentation
 				</Link>{" "}

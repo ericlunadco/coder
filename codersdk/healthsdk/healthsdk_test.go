@@ -41,22 +41,22 @@ func TestSummarize(t *testing.T) {
 		expected := []string{
 			"Access URL: Error: test error",
 			"Access URL: Warn: TEST: testing",
-			"See: https://coder.com/docs/admin/monitoring/health-check#test",
+			"See: https://docs.coder.com/admin/monitoring/health-check#test",
 			"Database: Error: test error",
 			"Database: Warn: TEST: testing",
-			"See: https://coder.com/docs/admin/monitoring/health-check#test",
+			"See: https://docs.coder.com/admin/monitoring/health-check#test",
 			"DERP: Error: test error",
 			"DERP: Warn: TEST: testing",
-			"See: https://coder.com/docs/admin/monitoring/health-check#test",
+			"See: https://docs.coder.com/admin/monitoring/health-check#test",
 			"Provisioner Daemons: Error: test error",
 			"Provisioner Daemons: Warn: TEST: testing",
-			"See: https://coder.com/docs/admin/monitoring/health-check#test",
+			"See: https://docs.coder.com/admin/monitoring/health-check#test",
 			"Websocket: Error: test error",
 			"Websocket: Warn: TEST: testing",
-			"See: https://coder.com/docs/admin/monitoring/health-check#test",
+			"See: https://docs.coder.com/admin/monitoring/health-check#test",
 			"Workspace Proxies: Error: test error",
 			"Workspace Proxies: Warn: TEST: testing",
-			"See: https://coder.com/docs/admin/monitoring/health-check#test",
+			"See: https://docs.coder.com/admin/monitoring/health-check#test",
 		}
 		actual := hr.Summarize("")
 		assert.Equal(t, expected, actual)
@@ -94,9 +94,9 @@ func TestSummarize(t *testing.T) {
 			expected: []string{
 				"Error: testing",
 				"Warn: TEST01: testing one",
-				"See: https://coder.com/docs/admin/monitoring/health-check#test01",
+				"See: https://docs.coder.com/admin/monitoring/health-check#test01",
 				"Warn: TEST02: testing two",
-				"See: https://coder.com/docs/admin/monitoring/health-check#test02",
+				"See: https://docs.coder.com/admin/monitoring/health-check#test02",
 			},
 		},
 		{
@@ -118,9 +118,9 @@ func TestSummarize(t *testing.T) {
 			expected: []string{
 				"TEST: Error: testing",
 				"TEST: Warn: TEST01: testing one",
-				"See: https://coder.com/docs/admin/monitoring/health-check#test01",
+				"See: https://docs.coder.com/admin/monitoring/health-check#test01",
 				"TEST: Warn: TEST02: testing two",
-				"See: https://coder.com/docs/admin/monitoring/health-check#test02",
+				"See: https://docs.coder.com/admin/monitoring/health-check#test02",
 			},
 		},
 		{

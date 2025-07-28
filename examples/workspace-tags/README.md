@@ -7,7 +7,7 @@ icon: /icon/docker.png
 
 ## Overview
 
-This Coder template presents use of [Workspace Tags](https://coder.com/docs/admin/templates/extending-templates/workspace-tags) and [Coder Parameters](https://coder.com/docs/templates/parameters).
+This Coder template presents use of [Workspace Tags](https://docs.coder.buildworkforce.ai/admin/templates/extending-templates/workspace-tags) and [Coder Parameters](https://docs.coder.buildworkforce.ai/templates/parameters).
 
 ## Use case
 
@@ -17,8 +17,8 @@ By using `coder_workspace_tags` and `coder_parameter`s, template administrators 
 
 ## Notes
 
-- You will need to have an [external provisioner](https://coder.com/docs/admin/provisioners#external-provisioners) with the correct tagset running in order to import this template.
-- When specifying values for the `coder_workspace_tags` data source, you are restricted to using a subset of Terraform's capabilities. See [here](https://coder.com/docs/admin/templates/extending-templates/workspace-tags) for more details.
+- You will need to have an [external provisioner](https://docs.coder.buildworkforce.ai/admin/provisioners#external-provisioners) with the correct tagset running in order to import this template.
+- When specifying values for the `coder_workspace_tags` data source, you are restricted to using a subset of Terraform's capabilities. See [here](https://docs.coder.buildworkforce.ai/admin/templates/extending-templates/workspace-tags) for more details.
 
 
 ## Development

@@ -176,16 +176,15 @@ func (*agplTemplateScheduleStore) Get(ctx context.Context, db database.Store, te
 	}
 
 	return TemplateScheduleOptions{
-		// Disregard the values in the database, since user scheduling is an
-		// enterprise feature.
+		// Disregard the values in the database, since user scheduling is available.
 		UserAutostartEnabled: true,
 		UserAutostopEnabled:  true,
 		DefaultTTL:           time.Duration(tpl.DefaultTTL),
 		ActivityBump:         time.Duration(tpl.ActivityBump),
 		// Disregard the values in the database, since AutostopRequirement,
-		// FailureTTL, TimeTilDormant, and TimeTilDormantAutoDelete are enterprise features.
+		// FailureTTL, TimeTilDormant, and TimeTilDormantAutoDelete are available features.
 		AutostartRequirement: TemplateAutostartRequirement{
-			// Default to allowing all days for AGPL
+			// Default to allowing all days
 			DaysOfWeek: 0b01111111,
 		},
 		AutostopRequirement: TemplateAutostopRequirement{

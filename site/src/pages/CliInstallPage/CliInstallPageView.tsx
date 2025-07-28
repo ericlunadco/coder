@@ -11,7 +11,7 @@ type CliInstallPageViewProps = {
 export const CliInstallPageView: FC<CliInstallPageViewProps> = ({ origin }) => {
 	return (
 		<div css={styles.container}>
-			<Welcome>Install the Coder CLI</Welcome>
+			<Welcome>Install the Workbench CLI</Welcome>
 
 			<p css={styles.instructions}>
 				Copy the command below and{" "}

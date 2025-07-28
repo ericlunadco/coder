@@ -32,7 +32,7 @@ func New() *Set {
 			Features:         map[codersdk.FeatureName]codersdk.Feature{},
 			Warnings:         []string{},
 			Errors:           []string{},
-			HasLicense:       false,
+			HasLicense:       true, // Enable all features by default
 			Trial:            false,
 			RequireTelemetry: false,
 			RefreshedAt:      time.Time{},
@@ -43,8 +43,8 @@ func New() *Set {
 	// expects this.
 	for _, featureName := range codersdk.FeatureNames {
 		s.entitlements.AddFeature(featureName, codersdk.Feature{
-			Entitlement: codersdk.EntitlementNotEntitled,
-			Enabled:     false,
+			Entitlement: codersdk.EntitlementEntitled, // Enable all features by default
+			Enabled:     true,                         // Enable all features by default
 		})
 	}
 	s.right2Update <- struct{}{} // one token, serialized updates
