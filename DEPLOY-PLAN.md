@@ -6,6 +6,25 @@
 
 Once your infrastructure is set up (RDS, Secrets Manager, ECS roles, etc.), you can redeploy Coder with a single command:
 
+### MFA Authentication Required
+
+Before running deployment commands, ensure you have valid MFA credentials:
+
+```bash
+# Check if your MFA session is still valid
+aws sts get-caller-identity
+
+# If expired, get a new MFA session (replace XXXXXX with your MFA code)
+aws sts get-session-token --serial-number arn:aws:iam::YOUR_ACCOUNT:mfa/YOUR_USERNAME --token-code XXXXXX --duration-seconds 43200
+
+# Update your ~/.aws/credentials [mfa-session] section with the new credentials
+# Then set the profile and region:
+export AWS_PROFILE=mfa-session
+export AWS_REGION=us-east-1
+```
+
+### Run Deployment
+
 ```bash
 ./deploy-with-database.sh
 ```
@@ -31,6 +50,7 @@ This document outlines the steps to deploy your Coder frontend changes to AWS us
 - Docker installed and running
 - ECR repository created or permissions to create one
 - AWS ECS permissions
+- **MFA Authentication Required**: Your AWS account has MFA enforcement enabled
 
 ## Step 1: Build the Offline Documentation
 
@@ -408,3 +428,8 @@ To rollback to previous version:
 6. **Task failing to start:** Check CloudWatch logs at `/ecs/coder` log group
 7. **Database connection timeout:** Ensure RDS security group allows connections from ECS security group on port 5432
 8. **Wrong environment variable:** Use `CODER_PG_CONNECTION_URL` not `CODER_POSTGRES_URL` for database connection
+9. **MFA Authentication Errors:**
+   - **Error:** `ExpiredToken` or `AccessDeniedException` with explicit deny
+   - **Cause:** MFA session has expired or you're using a profile without MFA
+   - **Solution:** Run `aws sts get-session-token` with your MFA device to get new credentials
+   - **Verify:** Use `export AWS_PROFILE=mfa-session` and test with `aws sts get-caller-identity`

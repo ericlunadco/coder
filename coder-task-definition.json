@@ -5,10 +5,11 @@
   "cpu": "1024",
   "memory": "2048",
   "executionRoleArn": "arn:aws:iam::132880019009:role/coder-ecs-task-execution-role",
+  "taskRoleArn": "arn:aws:iam::132880019009:role/coder-ecs-task-role",
   "containerDefinitions": [
     {
       "name": "coder",
-      "image": "132880019009.dkr.ecr.us-east-1.amazonaws.com/coder:2.0.0-devel-a99f2463c",
+      "image": "132880019009.dkr.ecr.us-east-1.amazonaws.com/coder:2.0.0-devel-e0f93fb88",
       "portMappings": [
         {
           "containerPort": 3000,

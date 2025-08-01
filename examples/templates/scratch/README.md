@@ -1,12 +1,12 @@
 ---
 display_name: Scratch
-description: A minimal starter template for Coder
+description: A minimal starter template for Workbench
 icon: ../../../site/static/emojis/1f4e6.png
 maintainer_github: coder
 verified: true
 tags: []
 ---
 
-# A minimal Scaffolding for a Coder Template
+# A minimal Scaffolding for a Workbench Template
 
 Use this starter template as a basis to create your own unique template from scratch.

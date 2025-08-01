@@ -187,9 +187,9 @@
 		"id": "scratch",
 		"url": "",
 		"name": "Scratch",
-		"description": "A minimal starter template for Coder",
+		"description": "A minimal starter template for Workbench",
 		"icon": "/emojis/1f4e6.png",
 		"tags": [],
-		"markdown": "\n# A minimal Scaffolding for a Coder Template\n\nUse this starter template as a basis to create your own unique template from scratch.\n"
+		"markdown": "\n# A minimal Scaffolding for a Workbench Template\n\nUse this starter template as a basis to create your own unique template from scratch.\n"
 	}
 ]
