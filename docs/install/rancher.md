@@ -117,7 +117,7 @@ kubectl create secret generic coder-db-url -n coder \
              key: url
 
        # For production, uncomment and set your access URL
-       # - name: CODER_ACCESS_URL
+       # - name: WORKBENCH_ACCESS_URL
        #   value: "https://coder.example.com"
 
      # For TLS configuration (uncomment if needed)

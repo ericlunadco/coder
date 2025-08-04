@@ -90,7 +90,7 @@ CODER_PROXY_SESSION_TOKEN="<session_token_from_proxy_create>"
 CODER_HTTP_ADDRESS=0.0.0.0:80
 CODER_TLS_ADDRESS=0.0.0.0:443
 # Example: https://east.coderd.example.com
-CODER_ACCESS_URL="https://<access_url_of_proxy>"
+WORKBENCH_ACCESS_URL="https://<access_url_of_proxy>"
 # Example: *.east.coderd.example.com
 CODER_WILDCARD_ACCESS_URL="*.<app_hostname_of_proxy>"
 
@@ -117,7 +117,7 @@ coder:
     - name: CODER_PROXY_SESSION_TOKEN
       value: "<session_token_from_proxy_create>"
     # Example: https://east.coderd.example.com
-    - name: CODER_ACCESS_URL
+    - name: WORKBENCH_ACCESS_URL
       value: "https://<access_url_of_proxy>"
     # Example: *.east.coderd.example.com
     - name: CODER_WILDCARD_ACCESS_URL

@@ -22,7 +22,7 @@
           "value": "0.0.0.0:3000"
         },
         {
-          "name": "CODER_ACCESS_URL",
+          "name": "WORKBENCH_ACCESS_URL",
           "value": "https://workbench.buildworkforce.ai"
         },
         {

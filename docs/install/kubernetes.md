@@ -108,7 +108,7 @@ coder:
 
     # (Optional) For production deployments the access URL should be set.
     # If you're just trying Coder, access the dashboard via the service IP.
-    # - name: CODER_ACCESS_URL
+    # - name: WORKBENCH_ACCESS_URL
     #   value: "https://coder.example.com"
 
   #tls:
@@ -155,7 +155,7 @@ has started, the `coder-*` pods should enter the `Running` state.
 Use `kubectl get svc -n coder` to get the IP address of the LoadBalancer. Visit
 this in the browser to set up your first account.
 
-If you do not have a domain, you should set `CODER_ACCESS_URL` to this URL in
+If you do not have a domain, you should set `WORKBENCH_ACCESS_URL` to this URL in
 the Helm chart and upgrade Coder (see below). This allows workspaces to connect
 to the proper Coder URL.
 
@@ -303,7 +303,7 @@ Cloud's log management system if you are using managed Kubernetes.
 
 ### Kubernetes-based workspace is stuck in "Connecting..."
 
-Ensure you have an externally-reachable `CODER_ACCESS_URL` set in your helm
+Ensure you have an externally-reachable `WORKBENCH_ACCESS_URL` set in your helm
 chart. If you do not have a domain set up, this should be the IP address of
 Coder's LoadBalancer (`kubectl get svc -n coder`).
 

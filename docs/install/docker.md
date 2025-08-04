@@ -34,13 +34,13 @@ docker run --rm -it \
 ### External database (recommended)
 
 For production deployments, we recommend using an external PostgreSQL database
-(version 13 or higher). Set `CODER_ACCESS_URL` to the external URL that users
+(version 13 or higher). Set `WORKBENCH_ACCESS_URL` to the external URL that users
 and workspaces will use to connect to Coder.
 
 ```shell
 export DOCKER_GROUP=$(getent group docker | cut -d: -f3)
 docker run --rm -it \
-  -e CODER_ACCESS_URL="https://coder.example.com" \
+  -e WORKBENCH_ACCESS_URL="https://coder.example.com" \
   -e CODER_PG_CONNECTION_URL="postgresql://username:password@database/coder" \
   -v /var/run/docker.sock:/var/run/docker.sock \
   --group-add $DOCKER_GROUP \
@@ -94,7 +94,7 @@ Replace `ghcr.io/coder/coder:latest` in the `docker run` command in the
 
 ### Docker-based workspace is stuck in "Connecting..."
 
-Ensure you have an externally-reachable `CODER_ACCESS_URL` set. See
+Ensure you have an externally-reachable `WORKBENCH_ACCESS_URL` set. See
 [troubleshooting templates](../admin/templates/troubleshooting.md) for more
 steps.
 

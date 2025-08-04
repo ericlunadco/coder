@@ -259,7 +259,7 @@ Administrators can configure which delivery methods are used for each different
 ![preferences](../../../images/admin/monitoring/notifications/notification-admin-prefs.png)
 
 You can find this page under
-`https://$CODER_ACCESS_URL/deployment/notifications?tab=events`.
+`https://$WORKBENCH_ACCESS_URL/deployment/notifications?tab=events`.
 
 ## Stop sending notifications
 

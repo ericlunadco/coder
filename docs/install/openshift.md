@@ -82,7 +82,7 @@ coder:
 To establish a connection to PostgreSQL, set the `CODER_PG_CONNECTION_URL`
 value. [See our Helm documentation](./kubernetes.md) on configuring the
 PostgreSQL connection URL as a secret. Additionally, if accessing Coder over a
-hostname, set the `CODER_ACCESS_URL` value.
+hostname, set the `WORKBENCH_ACCESS_URL` value.
 
 By default, Coder creates the cache directory in `/home/coder/.cache`. Given the
 OpenShift-provided UID and `readOnlyRootFS` security context constraint, the
@@ -113,7 +113,7 @@ coder:
         secretKeyRef:
           key: url
           name: coder-db-url
-    - name: CODER_ACCESS_URL
+    - name: WORKBENCH_ACCESS_URL
       value: "https://coder-example.apps.openshiftapps.com"
   securityContext:
     runAsNonRoot: true

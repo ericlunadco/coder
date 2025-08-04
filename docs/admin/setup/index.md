@@ -6,7 +6,7 @@ full list of the options, run `coder server --help` or see our
 
 ## Access URL
 
-`CODER_ACCESS_URL` is required if you are not using the tunnel. Set this to the
+`WORKBENCH_ACCESS_URL` is required if you are not using the tunnel. Set this to the
 external URL that users and workspaces use to connect to Coder (e.g.
 <https://coder.example.com>). This should not be localhost.
 

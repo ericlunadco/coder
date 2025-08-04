@@ -167,7 +167,7 @@ services:
     # ...
   environment:
     CODER_TELEMETRY_ENABLE: "false" # Disable telemetry
-    CODER_BLOCK_DIRECT: "true" # force SSH traffic through control plane's DERP proxy
+    WORKBENCH_BLOCK_DIRECT: "true" # force SSH traffic through control plane's DERP proxy
     CODER_DERP_SERVER_STUN_ADDRESSES: "disable" # Only use relayed connections
     CODER_UPDATE_CHECK: "false" # Disable automatic update checks
   database:
@@ -201,7 +201,7 @@ coder:
     - name: "CODER_UPDATE_CHECK"
       value: "false"
     # force SSH traffic through control plane's DERP proxy
-    - name: CODER_BLOCK_DIRECT
+    - name: WORKBENCH_BLOCK_DIRECT
       value: "true"
     # Only use relayed connections
     - name: "CODER_DERP_SERVER_STUN_ADDRESSES"

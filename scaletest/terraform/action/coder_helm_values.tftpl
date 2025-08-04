@@ -20,7 +20,7 @@ coder:
               values:   ["${release_name}"]
   env:
     %{~ if workspace_proxy ~}
-    - name: "CODER_ACCESS_URL"
+    - name: "WORKBENCH_ACCESS_URL"
       value: "${access_url}"
     - name: CODER_PRIMARY_ACCESS_URL
       value: "${primary_url}"
@@ -43,7 +43,7 @@ coder:
       value: "/tmp/config"
     %{~ endif ~}
     %{~ if !workspace_proxy && !provisionerd ~}
-    - name: "CODER_ACCESS_URL"
+    - name: "WORKBENCH_ACCESS_URL"
       value: "${access_url}"
     - name: "CODER_PG_CONNECTION_URL"
       valueFrom:

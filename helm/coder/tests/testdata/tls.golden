@@ -158,7 +158,7 @@ spec:
           value: 0.0.0.0:8080
         - name: CODER_PROMETHEUS_ADDRESS
           value: 0.0.0.0:2112
-        - name: CODER_ACCESS_URL
+        - name: WORKBENCH_ACCESS_URL
           value: https://coder.default.svc.cluster.local
         - name: KUBE_POD_IP
           valueFrom:

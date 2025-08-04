@@ -249,7 +249,7 @@ Update your ECS task definition to include the stable URL:
       "value": "0.0.0.0:3000"
     },
     {
-      "name": "CODER_ACCESS_URL",
+      "name": "WORKBENCH_ACCESS_URL",
       "value": "https://coder.buildworkforce.ai"
     },
     {

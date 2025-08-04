@@ -25,7 +25,7 @@ coder server [flags]
 |             |                                   |
 |-------------|-----------------------------------|
 | Type        | <code>url</code>                  |
-| Environment | <code>$CODER_ACCESS_URL</code>    |
+| Environment | <code>$WORKBENCH_ACCESS_URL</code>    |
 | YAML        | <code>networking.accessURL</code> |
 
 The URL that users will use to access the Coder deployment.
@@ -234,10 +234,10 @@ An HTTP URL that is accessible by other replicas to relay DERP traffic. Required
 |             |                                          |
 |-------------|------------------------------------------|
 | Type        | <code>bool</code>                        |
-| Environment | <code>$CODER_BLOCK_DIRECT</code>         |
+| Environment | <code>$WORKBENCH_BLOCK_DIRECT</code>         |
 | YAML        | <code>networking.derp.blockDirect</code> |
 
-Block peer-to-peer (aka. direct) workspace connections. All workspace connections from the CLI will be proxied through Coder (or custom configured DERP servers) and will never be peer-to-peer when enabled. Workspaces may still reach out to STUN servers to get their address until they are restarted after this change has been made, but new connections will still be proxied regardless.
+Block peer-to-peer (aka. direct) workspace connections. All workspace connections from the CLI will be proxied through Workbench (or custom configured DERP servers) and will never be peer-to-peer when enabled. Workspaces may still reach out to STUN servers to get their address until they are restarted after this change has been made, but new connections will still be proxied regardless.
 
 ### --derp-force-websockets
 
@@ -855,7 +855,7 @@ Allow administrators to enable Terraform debug output.
 |             |                                                  |
 |-------------|--------------------------------------------------|
 | Type        | <code>string-array</code>                        |
-| Environment | <code>$CODER_ADDITIONAL_CSP_POLICY</code>        |
+| Environment | <code>$WORKBENCH_ADDITIONAL_CSP_POLICY</code>        |
 | YAML        | <code>networking.http.additionalCSPPolicy</code> |
 
 Coder configures a Content Security Policy (CSP) to protect against XSS attacks. This setting allows you to add additional CSP directives, which can open the attack surface of the deployment. Format matches the CSP directive format, e.g. --additional-csp-policy="script-src https://example.com".
@@ -1061,10 +1061,10 @@ The algorithm to use for generating ssh keys. Accepted values are "ed25519", "ec
 |             |                                     |
 |-------------|-------------------------------------|
 | Type        | <code>bool</code>                   |
-| Environment | <code>$CODER_BROWSER_ONLY</code>    |
+| Environment | <code>$WORKBENCH_BROWSER_ONLY</code>    |
 | YAML        | <code>networking.browserOnly</code> |
 
-Whether Coder only allows connections to workspaces via the browser.
+Whether Workbench only allows connections to workspaces via the browser.
 
 ### --scim-auth-header
 

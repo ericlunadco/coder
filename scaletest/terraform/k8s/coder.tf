@@ -115,7 +115,7 @@ coder:
               operator: "In"
               values:   ["${local.coder_release_name}"]
   env:
-    - name: "CODER_ACCESS_URL"
+    - name: "WORKBENCH_ACCESS_URL"
       value: "${local.coder_url}"
     - name: "CODER_CACHE_DIRECTORY"
       value: "/tmp/coder"

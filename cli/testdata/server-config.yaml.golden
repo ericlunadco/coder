@@ -181,7 +181,7 @@ networking:
   # Controls the 'SameSite' property is set on browser session cookies.
   # (default: lax, type: enum[lax\|none])
   sameSiteAuthCookie: lax
-  # Whether Coder only allows connections to workspaces via the browser.
+  # Whether Workbench only allows connections to workspaces via the browser.
   # (default: <unset>, type: bool)
   browserOnly: false
 # Interval to poll for scheduled workspace builds.

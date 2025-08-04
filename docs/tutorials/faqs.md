@@ -90,7 +90,7 @@ troubleshooting.
 
 | Flag                                                                                          | Value       | Meaning                               |
 |-----------------------------------------------------------------------------------------------|-------------|---------------------------------------|
-| [`CODER_BLOCK_DIRECT`](../reference/cli/server.md#--block-direct-connections)                 | `true`      | Blocks direct connections             |
+| [`WORKBENCH_BLOCK_DIRECT`](../reference/cli/server.md#--block-direct-connections)                 | `true`      | Blocks direct connections             |
 | [`CODER_DERP_SERVER_STUN_ADDRESSES`](../reference/cli/server.md#--derp-server-stun-addresses) | `"disable"` | Disables STUN                         |
 | [`CODER_DERP_FORCE_WEBSOCKETS`](../reference/cli/server.md#--derp-force-websockets)           | `true`      | Forces websockets over Tailscale DERP |
 
@@ -156,7 +156,7 @@ resource "coder_app" "code-server" {
 An important concept to understand is that Coder creates workspaces which have
 an agent that must be able to reach the `coder server`.
 
-If the [`CODER_ACCESS_URL`](../admin/setup/index.md#access-url) is not
+If the [`WORKBENCH_ACCESS_URL`](../admin/setup/index.md#access-url) is not
 accessible from a workspace, the workspace may build, but the agent cannot reach
 Coder, and thus the missing icons. e.g., Terminal, IDEs, Apps.
 
@@ -239,7 +239,7 @@ certificates from Let's Encrypt.
 can start Caddy as a `systemd` service.
 
 The Caddyfile configuration will appear like this where `127.0.0.1:3000` is your
-`CODER_ACCESS_URL`:
+`WORKBENCH_ACCESS_URL`:
 
 ```text
 coder.example.com {

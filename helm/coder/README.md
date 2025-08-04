@@ -33,7 +33,7 @@ coder:
   # `CODER_TLS_ENABLE`, `CODER_TLS_CERT_FILE` or `CODER_TLS_KEY_FILE` as
   # they are already set by the Helm chart and will cause conflicts.
   env:
-    - name: CODER_ACCESS_URL
+    - name: WORKBENCH_ACCESS_URL
       value: "https://coder.example.com"
     - name: CODER_PG_CONNECTION_URL
       valueFrom:

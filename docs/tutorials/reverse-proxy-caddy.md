@@ -20,10 +20,10 @@ certificates, you'll need a domain name that resolves to your Caddy server.
        environment:
            CODER_PG_CONNECTION_URL: "postgresql://${POSTGRES_USER:-username}:${POSTGRES_PASSWORD:-password}@database/${POSTGRES_DB:-coder}?sslmode=disable"
            CODER_HTTP_ADDRESS: "0.0.0.0:7080"
-           # You'll need to set CODER_ACCESS_URL to an IP or domain
+           # You'll need to set WORKBENCH_ACCESS_URL to an IP or domain
            # that workspaces can reach. This cannot be localhost
            # or 127.0.0.1 for non-Docker templates!
-           CODER_ACCESS_URL: "${CODER_ACCESS_URL}"
+           WORKBENCH_ACCESS_URL: "${WORKBENCH_ACCESS_URL}"
            # Optional) Enable wildcard apps/dashboard port forwarding
            CODER_WILDCARD_ACCESS_URL: "${CODER_WILDCARD_ACCESS_URL}"
            # If the coder user does not have write permissions on
@@ -105,11 +105,11 @@ certificates, you'll need a domain name that resolves to your Caddy server.
    - `email@example.com`: Email to request certificates from LetsEncrypt/ZeroSSL
      (does not have to be Coder admin email)
 
-4. Start Coder. Set `CODER_ACCESS_URL` and `CODER_WILDCARD_ACCESS_URL` to the
+4. Start Coder. Set `WORKBENCH_ACCESS_URL` and `CODER_WILDCARD_ACCESS_URL` to the
    domain you're using in your Caddyfile.
 
    ```shell
-   export CODER_ACCESS_URL=https://coder.example.com
+   export WORKBENCH_ACCESS_URL=https://coder.example.com
    export CODER_WILDCARD_ACCESS_URL=*.coder.example.com
    docker compose up -d # Run on startup
    ```
@@ -150,7 +150,7 @@ certificates, you'll need a domain name that resolves to your Caddy server.
 
 4. [Configure Coder](../admin/setup/index.md) and change the following values:
 
-   - `CODER_ACCESS_URL`: root domain (e.g. `https://coder.example.com`)
+   - `WORKBENCH_ACCESS_URL`: root domain (e.g. `https://coder.example.com`)
    - `CODER_WILDCARD_ACCESS_URL`: wildcard domain (e.g. `*.example.com`).
 
 5. Start the Caddy server:

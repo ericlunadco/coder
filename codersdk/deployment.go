@@ -1228,10 +1228,10 @@ func (c *DeploymentValues) Options() serpent.OptionSet {
 	opts := serpent.OptionSet{
 		{
 			Name:        "Access URL",
-			Description: `The URL that users will use to access the Coder deployment.`,
+			Description: `The URL that users will use to access the Workbench deployment.`,
 			Value:       &c.AccessURL,
 			Flag:        "access-url",
-			Env:         "CODER_ACCESS_URL",
+			Env:         "WORKBENCH_ACCESS_URL",
 			Group:       &deploymentGroupNetworking,
 			YAML:        "accessURL",
 			Annotations: serpent.Annotations{}.Mark(annotationExternalProxies, "true"),
@@ -1299,7 +1299,7 @@ func (c *DeploymentValues) Options() serpent.OptionSet {
 			Description:   "Bind address of the server.",
 			Flag:          "address",
 			FlagShorthand: "a",
-			Env:           "CODER_ADDRESS",
+			Env:           "WORKBENCH_ADDRESS",
 			Hidden:        true,
 			Value:         &c.Address,
 			UseInstead: serpent.OptionSet{
@@ -1498,12 +1498,12 @@ func (c *DeploymentValues) Options() serpent.OptionSet {
 		},
 		{
 			Name:        "Block Direct Connections",
-			Description: "Block peer-to-peer (aka. direct) workspace connections. All workspace connections from the CLI will be proxied through Coder (or custom configured DERP servers) and will never be peer-to-peer when enabled. Workspaces may still reach out to STUN servers to get their address until they are restarted after this change has been made, but new connections will still be proxied regardless.",
+			Description: "Block peer-to-peer (aka. direct) workspace connections. All workspace connections from the CLI will be proxied through Workbench (or custom configured DERP servers) and will never be peer-to-peer when enabled. Workspaces may still reach out to STUN servers to get their address until they are restarted after this change has been made, but new connections will still be proxied regardless.",
 			// This cannot be called `disable-direct-connections` because that's
 			// already a global CLI flag for CLI connections. This is a
 			// deployment-wide flag.
 			Flag:  "block-direct-connections",
-			Env:   "CODER_BLOCK_DIRECT",
+			Env:   "WORKBENCH_BLOCK_DIRECT",
 			Value: &c.DERP.Config.BlockDirect,
 			Group: &deploymentGroupNetworkingDERP,
 			YAML:  "blockDirect", Annotations: serpent.Annotations{}.
@@ -2255,11 +2255,11 @@ func (c *DeploymentValues) Options() serpent.OptionSet {
 		},
 		{
 			Name: "Additional CSP Policy",
-			Description: "Coder configures a Content Security Policy (CSP) to protect against XSS attacks. " +
+			Description: "Workbench configures a Content Security Policy (CSP) to protect against XSS attacks. " +
 				"This setting allows you to add additional CSP directives, which can open the attack surface of the deployment. " +
 				"Format matches the CSP directive format, e.g. --additional-csp-policy=\"script-src https://example.com\".",
 			Flag:  "additional-csp-policy",
-			Env:   "CODER_ADDITIONAL_CSP_POLICY",
+			Env:   "WORKBENCH_ADDITIONAL_CSP_POLICY",
 			YAML:  "additionalCSPPolicy",
 			Value: &c.AdditionalCSPPolicy,
 			Group: &deploymentGroupNetworkingHTTP,
@@ -2519,9 +2519,9 @@ func (c *DeploymentValues) Options() serpent.OptionSet {
 		},
 		{
 			Name:        "Browser Only",
-			Description: "Whether Coder only allows connections to workspaces via the browser.",
+			Description: "Whether Workbench only allows connections to workspaces via the browser.",
 			Flag:        "browser-only",
-			Env:         "CODER_BROWSER_ONLY",
+			Env:         "WORKBENCH_BROWSER_ONLY",
 			Annotations: serpent.Annotations{}.Mark(annotationEnterpriseKey, "true"),
 			Value:       &c.BrowserOnly,
 			Group:       &deploymentGroupNetworking,

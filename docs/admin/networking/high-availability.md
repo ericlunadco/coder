@@ -36,12 +36,12 @@ relay (default). If you're using [custom relays](./index.md#custom-relays),
 Coder ignores `CODER_DERP_SERVER_RELAY_URL` since Postgres is the sole
 rendezvous for the Coder nodes.
 
-`CODER_DERP_SERVER_RELAY_URL` will never be `CODER_ACCESS_URL` because
-`CODER_ACCESS_URL` is a load balancer to all Coder nodes.
+`CODER_DERP_SERVER_RELAY_URL` will never be `WORKBENCH_ACCESS_URL` because
+`WORKBENCH_ACCESS_URL` is a load balancer to all Coder nodes.
 
 Here's an example 3-node network configuration setup:
 
-| Name      | `CODER_HTTP_ADDRESS` | `CODER_DERP_SERVER_RELAY_URL` | `CODER_ACCESS_URL`       |
+| Name      | `CODER_HTTP_ADDRESS` | `CODER_DERP_SERVER_RELAY_URL` | `WORKBENCH_ACCESS_URL`       |
 |-----------|----------------------|-------------------------------|--------------------------|
 | `coder-1` | `*:80`               | `http://10.0.0.1:80`          | `https://coder.big.corp` |
 | `coder-2` | `*:80`               | `http://10.0.0.2:80`          | `https://coder.big.corp` |

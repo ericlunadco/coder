@@ -360,7 +360,7 @@ Key environment variables for Coder deployment:
 
 ```bash
 CODER_HTTP_ADDRESS=0.0.0.0:3000
-CODER_ACCESS_URL=https://your-domain.com
+WORKBENCH_ACCESS_URL=https://your-domain.com
 CODER_PG_CONNECTION_URL=postgresql://...  # If using external DB
 CODER_WILDCARD_ACCESS_URL=*.your-domain.com
 CODER_DOCS_URL=https://docs.workbench.buildworkforce.ai  # Custom domain (requires DNS setup)

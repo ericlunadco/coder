@@ -52,12 +52,12 @@ env:
   # See: https://github.com/coder/coder/issues/5024
 {{- $hasAccessURL := false }}
 {{- range .Values.coder.env }}
-{{- if eq .name "CODER_ACCESS_URL" }}
+{{- if eq .name "WORKBENCH_ACCESS_URL" }}
 {{- $hasAccessURL = true }}
 {{- end }}
 {{- end }}
 {{- if and (not $hasAccessURL) .Values.coder.envUseClusterAccessURL }}
-- name: CODER_ACCESS_URL
+- name: WORKBENCH_ACCESS_URL
   value: {{ include "coder.defaultAccessURL" . | quote }}
 {{- end }}
 # Used for inter-pod communication with high-availability.

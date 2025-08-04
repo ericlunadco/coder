@@ -1136,7 +1136,7 @@ func (api *API) workspaceAgentClientCoordinate(rw http.ResponseWriter, r *http.R
 	}
 
 	// This is used by Enterprise code to control the functionality of this route.
-	// Namely, disabling the route using `CODER_BROWSER_ONLY`.
+	// Namely, disabling the route using `WORKBENCH_BROWSER_ONLY`.
 	override := api.WorkspaceClientCoordinateOverride.Load()
 	if override != nil {
 		overrideFunc := *override
@@ -1899,7 +1899,7 @@ func (api *API) tailnetRPCConn(rw http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
 	// This is used by Enterprise code to control the functionality of this route.
-	// Namely, disabling the route using `CODER_BROWSER_ONLY`.
+	// Namely, disabling the route using `WORKBENCH_BROWSER_ONLY`.
 	override := api.WorkspaceClientCoordinateOverride.Load()
 	if override != nil {
 		overrideFunc := *override
